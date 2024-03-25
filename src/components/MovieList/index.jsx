@@ -12,7 +12,7 @@ const MovieList = (props) => {
           <Link to={movie.imdbID} key={movie.imdbID}>
             <Card
               hoverable
-              style={{ width: 250 }}
+              style={{ width: window.innerWidth > 768 ? 250 : 200 }}
               cover={
                 <img
                   alt="movie-cover"
@@ -21,7 +21,7 @@ const MovieList = (props) => {
                       ? movie.Poster
                       : "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"
                   }
-                  style={{ height: "300px", objectFit: "cover" }}
+                  style={{ height: "auto", objectFit: "cover" }}
                   // onClick={() => handleMovieSelect(movie.imdbID)}
                 />
               }

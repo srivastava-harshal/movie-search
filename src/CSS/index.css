@@ -128,3 +128,16 @@ h3 {
   text-align: center;
   font-family: ui-rounded;
 }
+
+.ant-card-body {
+  padding: 10px 20px;
+}
+
+.ant-card-meta-detail > div:not(:last-child) {
+  margin: 0;
+  text-align: center;
+}
+
+.ant-card-meta-description {
+  text-align: center;
+}
