@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 const MovieList = (props) => {
+  const width = window.innerWidth > 768 ? 250 : 200;
   return (
     <div className="movie-list">
       {props.movies.map((movie) => {
@@ -12,7 +13,7 @@ const MovieList = (props) => {
           <Link to={movie.imdbID} key={movie.imdbID}>
             <Card
               hoverable
-              style={{ width: window.innerWidth > 768 ? 250 : 200 }}
+              style={{ width }}
               cover={
                 <img
                   alt="movie-cover"
