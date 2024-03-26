@@ -2,6 +2,7 @@ import { Divider } from "antd";
 import React from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { LeftCircleOutlined } from "@ant-design/icons";
 
 const SelectedMovieInfo = (props) => {
   const navigate = useNavigate();
@@ -9,22 +10,31 @@ const SelectedMovieInfo = (props) => {
   return (
     <div className="outer-container">
       <div className="container">
+        {/* <button className="back-button" onClick={() => navigate("/")}> */}
+        <LeftCircleOutlined
+          className="back-button"
+          onClick={() => navigate("/")}
+          style={{ fontSize: "30px", color: "rgb(255,255,255,.7)" }}
+        />
+        {/* Back
+        </button> */}
         <div className="header">
-          <button className="back-button" onClick={() => navigate("/")}>
-            Back
-          </button>
-          <div className="header-left">
-            <h1>{props.movie.Title}</h1>
+          <div className="header-top">
+            <div className="header-top-title">
+              <h1>{props.movie.Title}</h1>
+            </div>
             <div className="year-type-duration">
               <div>Year: {props.movie.Year}</div>
               <div>{props.movie.Type}</div>
               <div>{props.movie.Runtime}</div>
             </div>
           </div>
-          <div className="header-right">
+          <div className="header-bottom">
             <div className="rating">
               <h3>IMDb RATING</h3>
-              <p>{props.movie.imdbRating}/10</p>
+              <p>
+                <span className="rating-rate">{props.movie.imdbRating}</span>/10
+              </p>
             </div>
             <div className="genre">
               <h3>GENRE</h3>
@@ -32,7 +42,9 @@ const SelectedMovieInfo = (props) => {
             </div>
           </div>
         </div>
-        <Divider style={{ backgroundColor: "white" }} />
+        <Divider
+          style={{ backgroundColor: "white", margin: "10px 0 20px 0" }}
+        />
         <div className="poster">
           <img src={props.movie.Poster} />
         </div>

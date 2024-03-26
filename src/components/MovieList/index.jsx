@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 const MovieList = (props) => {
-  const width = window.innerWidth > 768 ? 250 : 200;
+  const width = window.innerWidth > 768 ? 250 : 170;
   return (
     <div className="movie-list">
       {props.movies.map((movie) => {

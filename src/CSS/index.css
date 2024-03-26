@@ -44,12 +44,9 @@ div {
 }
 
 .back-button {
-  margin: 0;
-  background-color: rgb(110, 110, 12);
-  font-weight: bolder;
-  color: black;
-  font-size: 1.2rem;
-  border-radius: 10px;
+  position: absolute;
+  left: 15px;
+  top: 20px;
 }
 
 .outer-container {
@@ -58,6 +55,7 @@ div {
 }
 
 .container {
+  position: relative;
   background-color: rgb(31, 28, 28);
   color: white;
   max-width: 1200px;
@@ -65,41 +63,106 @@ div {
 
 .header {
   display: flex;
-}
-
-.header-left {
-  width: 100%;
-}
-
-.header-right {
-  display: flex;
-  width: 100%;
   justify-content: space-around;
+  padding: 0 50px;
+}
+
+.header-bottom {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .back-button {
+    font-size: 25px !important;
+    left: 10px;
+  }
+
+  .header {
+    padding: 0 0 0 50px;
+  }
+
+  .header-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header-top-title h1 {
+    font-size: 1rem;
+  }
+
+  .year-type-duration {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .back-button {
+    font-size: 20px !important;
+    left: 10px;
+  }
+
+  .header {
+    padding: 0 0 0 30px;
+  }
+
+  .header-top-title h1 {
+    font-size: 0.75rem;
+  }
+
+  .rating h3 {
+    font-size: 0.6rem !important;
+  }
+
+  .genre {
+    font-size: 0.6rem;
+  }
+
+  .genre h3 {
+    font-size: 0.6rem !important;
+  }
+
+  .year-type-duration {
+    font-size: 0.6rem;
+  }
 }
 
 .year-type-duration {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   gap: 20px;
 }
 
 .rating {
-  background-color: rgb(110, 110, 12);
-  border-radius: 10px;
   text-align: center;
-  color: black;
+  color: rgb(255, 255, 255, 0.7);
   font-weight: bolder;
   padding-top: 10px;
 }
 
 .rating h3 {
-  color: black;
+  color: rgb(255, 255, 255, 0.7);
   font-weight: bolder;
+  font-size: 0.75rem;
+}
+
+.rating-rate {
+  font-size: 20px;
+  color: white;
 }
 
 .genre {
   font-weight: bolder;
   padding-top: 10px;
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.genre h3 {
+  font-size: 0.75rem;
+  font-weight: bolder;
+  color: rgb(255, 255, 255, 0.7);
 }
 
 h1 {
@@ -119,7 +182,7 @@ h3 {
 .content {
   font-size: 1.25rem;
   text-align: initial;
-  padding: 3rem;
+  padding: 0.5rem 3rem;
   font-family: ui-rounded;
 }
 
@@ -127,6 +190,7 @@ h3 {
   font-size: 1.25rem;
   text-align: center;
   font-family: ui-rounded;
+  padding-bottom: 20px;
 }
 
 .ant-card-body {
